@@ -1,8 +1,0 @@
-{
-	"name": "Remove emojis",
-	"author": "CNTools | Clemens Neubauer",
-	"description": "remove emojis in the title of newly added feed entries",
-	"version": "0.1-dev",
-	"entrypoint": "RemoveEmojis",
-	"type": "user"
-}
