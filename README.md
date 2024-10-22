@@ -1,40 +1,13 @@
 # FreshRSS extensions
 
-This repository contains my unofficial FreshRSS extensions.
+This repository contains a fork of cn-tools unofficial FreshRSS extensions.
+The main reason for this for was a modification of the FilterTitle extension. The settings are now 'user' based, instead of 'system' wide. This allows each user to specify black and whitelists individually.
 
 ## Available extansions
-
-### BlackList
-
-With this plug-in you can define a blocklist in FreshRSS system to prevent unwanted feeds and URLs.
-
-### Copy2Clipboard
-
-This add on for FreshRSS add a button in the navigation bar to copy the destination links of all visible entries into clipboard.\
-Required FreshRSS version at least v1.18
-
-### FeedTitleBuilder
-
-Build your own feed title based on URL, the original feed title and the date the feed was added\
-Have a look into the [DOCUMENTATION](https://github.com/cn-tools/cntools_FreshRssExtensions/tree/master/xExtension-FeedTitleBuilder)
 
 ### FilterTitle
 
 This plug-in helps you to filter feed entries by keywords parsed by the feed entry title
-
-### RemoveEmojis
-
-This plug-in remove emojis in the title of newly added feed entries.
-
-### SendToMyJD2
-
-Send links of new feed entries to your jDownloader2 instance\
-Have a look into the [DOCUMENTATION](https://github.com/cn-tools/cntools_FreshRssExtensions/tree/master/xExtension-SendToMyJD2#documentation)
-
-### YouTubeChannel2RssFeed
-
-Transfer on the fly a YouTube URL into an RSS Feed and detect YouTube shorts\
-Have a look into the [DOCUMENTATION](https://github.com/cn-tools/cntools_FreshRssExtensions/tree/master/xExtension-YouTubeChannel2RssFeed#documentation)
 
 ## Translations
 
