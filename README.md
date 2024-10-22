@@ -1,7 +1,8 @@
 # FreshRSS extensions
 
 This repository contains a fork of cn-tools unofficial FreshRSS extensions.
-The main reason for this for was a modification of the FilterTitle extension. The settings are now 'user' based, instead of 'system' wide. This allows each user to specify black and whitelists individually.
+
+The main reason for this fork was a modification of the FilterTitle extension. The settings are now 'user' based, instead of 'system' wide. This allows each user to specify black and whitelists individually.
 
 ## Available extansions
 
