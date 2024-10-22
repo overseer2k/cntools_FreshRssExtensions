@@ -4,5 +4,5 @@
 	"description": "Filter feed entries by filter keywords in title",
 	"version": "0.1.0",
 	"entrypoint": "FilterTitle",
-	"type": "system"
+	"type": "user"
 }

@@ -16,18 +16,18 @@ class FilterTitleExtension extends Minz_Extension {
                 'mark_as_read' => Minz_Request::paramString('mark_as_read'),
                 'whitelist' => array_filter(Minz_Request::paramTextToArray('whitelist', [])),
             ];
-            $this->setSystemConfiguration($configuration);
+            $this->setUserConfiguration($configuration);
         }
     }
 
     public function filterTitle($entry) {
         if (is_object($entry) === true) {
             //-- do check BLACKLIST ---------------------------
-            $patterns = $this->getSystemConfigurationValue('blacklist') ?? [];
+            $patterns = $this->getUserConfigurationValue('blacklist') ?? [];
             if (is_array($patterns)) {
                 foreach ($patterns as $pattern) {
                     if (self::isPatternFound($entry->title(), $pattern) == true) {
-                        if ($this->getSystemConfigurationValue('mark_as_read') == '1') {
+                        if ($this->getUserConfigurationValue('mark_as_read') == '1') {
                             // add entry into database and mark as read
                             $entry->_isRead(true);
                             return $entry;
@@ -41,11 +41,11 @@ class FilterTitleExtension extends Minz_Extension {
             }
 
             //-- do check WHITELIST ---------------------------
-            $patterns = $this->getSystemConfigurationValue('whitelist') ?? [];
+            $patterns = $this->getUserConfigurationValue('whitelist') ?? [];
             if (is_array($patterns)) {
                 foreach ($patterns as $pattern) {
                     if (self::isPatternFound($entry->title(), $pattern) == false) {
-                        if ($this->getSystemConfigurationValue('mark_as_read') == '1') {
+                        if ($this->getUserConfigurationValue('mark_as_read') == '1') {
                             // add entry into database and mark as read
                             $entry->_isRead(true);
                             return $entry;
@@ -72,20 +72,20 @@ class FilterTitleExtension extends Minz_Extension {
     }
 
     public function getBlacklistData() {
-        if ($this->getSystemConfigurationValue('check_type') == '0') {
+        if ($this->getUserConfigurationValue('check_type') == '0') {
             // 20240311 - Until version v0.0.2 there was only blacklist OR whitelist availabe
-            return implode(PHP_EOL, $this->getSystemConfigurationValue('blacklist_title_keywords') ?? []);
+            return implode(PHP_EOL, $this->getUserConfigurationValue('blacklist_title_keywords') ?? []);
         } else {
-            return implode(PHP_EOL, $this->getSystemConfigurationValue('blacklist') ?? []);
+            return implode(PHP_EOL, $this->getUserConfigurationValue('blacklist') ?? []);
         }
     }
 
     public function getWhitelistData() {
-        if ($this->getSystemConfigurationValue('check_type') == '1') {
+        if ($this->getUserConfigurationValue('check_type') == '1') {
             // 20240311 - Until version v0.0.2 there was only blacklist OR whitelist availabe
-            return implode(PHP_EOL, $this->getSystemConfigurationValue('blacklist_title_keywords') ?? []);
+            return implode(PHP_EOL, $this->getUserConfigurationValue('blacklist_title_keywords') ?? []);
         } else {
-            return implode(PHP_EOL, $this->getSystemConfigurationValue('whitelist') ?? []);
+            return implode(PHP_EOL, $this->getUserConfigurationValue('whitelist') ?? []);
         }
     }
 }

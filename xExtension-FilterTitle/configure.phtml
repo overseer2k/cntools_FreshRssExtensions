@@ -29,7 +29,7 @@
 	<div class="form-group">
 		<label class="group-name" for="mark_as_read"><?= _t('ext.filter_title.mark_as_read') ?></label>
 		<div class="group-controls">
-			<input type="checkbox" name="mark_as_read" id="mark_as_read" value="1" <?= $this->getSystemConfigurationValue('mark_as_read') ? 'checked' : '' ?>>
+			<input type="checkbox" name="mark_as_read" id="mark_as_read" value="1" <?= $this->getUserConfigurationValue('mark_as_read') ? 'checked' : '' ?>>
             <br /><span><?= _t('ext.filter_title.mark_as_read_hint') ?></span>
 		</div>
 	</div>
